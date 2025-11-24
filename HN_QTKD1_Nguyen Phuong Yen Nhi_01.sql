@@ -58,14 +58,20 @@ select *
 from student 
 where gender like '%Nu%'; 
 -- Lấy ra danh sách kết quả thi (StudentId, SubjectId, Score) của môn học có mã là 'MH01', sắp xếp theo điểm thi giảm dần.
-select (studentid, subjectid, score)
-from result
+select studentid, subjectid, score
+from subjects
 where subjectid = 'MH01'
 order by score DESC; 
 -- Lấy ra tất cả thông tin của các sinh viên có họ là "Nguyen".
 select * from student 
 where fullname = 'Nguyen'; 
 -- Lấy ra danh sách các môn học có số tín chỉ lớn hơn hoặc bằng 4, hiển thị các cột SubjectId, SubjectName, Credit.
+select subjectid, subjectname, credit 
+from subjects 
+where credit >= 4
 -- Lấy ra 3 sinh viên đầu tiên trong danh sách sinh viên, sắp xếp theo ngày sinh tăng dần.
+select * from student 
+order by dateofbirth ASC
+limit 3; 
 
 
